@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="pom-test-api-test-suite.xml" />
+	<munit:test name="pom-test-api-test-suite-pom-test-apiFlowTest" doc:id="dac9c6c5-971f-4106-a870-dccf3d7fb39e" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to pom-test-apiFlow" doc:id="11b880f6-8de5-4668-b919-b4b8cfd6d747" name="pom-test-apiFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<logger level="INFO" doc:name="Logger" doc:id="83dd6c6f-871f-4aed-853b-18e56f3b738c" message="#[The tested flow]"/>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>

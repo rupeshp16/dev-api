@@ -15,6 +15,7 @@
 
 		<app.runtime>4.6.1</app.runtime>
 		<mule.maven.plugin.version>4.1.0</mule.maven.plugin.version>
+		<munit.version>3.1.0</munit.version>
 	</properties>
 
 	<build>
@@ -29,23 +30,45 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
-                <configuration>
+				<configuration>
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
-      					<muleVersion>4.6.0</muleVersion>
-      					<username>rupesh_Apr_2024</username>
-      					<password>Rupesh1992@</password>
-      					<applicationName>dev-pom-test-api</applicationName>
-     	 				<environment>Sandbox</environment>
-      					<region>us-east-1</region>
-      					<workers>1</workers>
-      					<workerType>MICRO</workerType>
-      					<objectStoreV2>true</objectStoreV2>
-      					<properties>
-        					<http.port>8081</http.port>
-      					</properties>
-    				</cloudHubDeployment>
-  				</configuration>
+						<muleVersion>4.6.0</muleVersion>
+						<username>rupesh_Apr_2024</username>
+						<password>Rupesh1992@</password>
+						<applicationName>dev-pom-test-api</applicationName>
+						<environment>Sandbox</environment>
+						<region>us-east-1</region>
+						<workers>1</workers>
+						<workerType>MICRO</workerType>
+						<objectStoreV2>true</objectStoreV2>
+						<properties>
+							<http.port>8081</http.port>
+						</properties>
+					</cloudHubDeployment>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.mulesoft.munit.tools</groupId>
+				<artifactId>munit-maven-plugin</artifactId>
+				<version>${munit.version}</version>
+				<executions>
+					<execution>
+						<id>test</id>
+						<phase>test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<coverage>
+						<runCoverage>true</runCoverage>
+						<formats>
+							<format>html</format>
+						</formats>
+					</coverage>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -62,6 +85,26 @@
 			<artifactId>mule-sockets-connector</artifactId>
 			<version>1.2.4</version>
 			<classifier>mule-plugin</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.mulesoft.munit</groupId>
+			<artifactId>munit-runner</artifactId>
+			<version>3.1.0</version>
+			<classifier>mule-plugin</classifier>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.mulesoft.munit</groupId>
+			<artifactId>munit-tools</artifactId>
+			<version>3.1.0</version>
+			<classifier>mule-plugin</classifier>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.weave</groupId>
+			<artifactId>assertions</artifactId>
+			<version>1.2.1</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
