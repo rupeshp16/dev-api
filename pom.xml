@@ -34,8 +34,8 @@
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>4.6.0</muleVersion>
-						<username>rupesh_Apr_2024</username>
-						<password>Rupesh1992@</password>
+						<username>${username}</username>
+						<password>${password}</password>
 						<applicationName>dev-pom-test-api</applicationName>
 						<environment>Sandbox</environment>
 						<region>us-east-1</region>
