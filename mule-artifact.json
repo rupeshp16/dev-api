@@ -1,3 +1,5 @@
 {
-  "minMuleVersion": "4.6.0"
+  "minMuleVersion": "4.6.0",
+  "secureProperties":"Denv"
+
 }
